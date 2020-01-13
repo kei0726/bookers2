@@ -1,0 +1,24 @@
+    <h1>User info</h1>
+<h3>Name</h3>
+<%= form_for(@user) do |f| %>
+<div class="form-group has-icon">
+     <label class="control-label sr-only" for="inputEmail">Name</label>
+     <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"名前"%>
+     <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+    </div>
+
+<h3>Image</h3>
+    <div class="form-group has-icon">
+    <label class="control-label sr-only" for="inputEmail">ProfileImage</label>
+    <%= f.attachment_field :profile_image, placeholder: "Image", class: "user-edit-form" %>
+    </div>
+
+<h3>Introduction</h3>
+<div class="form-group has-icon">
+        <label class="control-label sr-only" for="inputEmail">Introduction</label>
+        <%= f.text_field :introduction, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"Introduction"%>
+        <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+    </div>
+
+  <%= f.submit "Update User" %>
+<% end %>
